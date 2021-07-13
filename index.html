@@ -22,6 +22,11 @@
       <div><button v-on:click="showInfo = !showInfo">Toggle!</button>
       <p v-bind:class="{disabled: showInfo}">Extra information!</p>
       </div>
+      <div v-for="fruit in fruits">
+        <p>{{fruit}}</p>
+      </div>
+      <input type="text" v-model="newFruit"/>
+      <button v-on:click="addNewFruit()">Add that fruit!</button>
     </div>
     <div id="app-2">
       <span v-bind:title="message">

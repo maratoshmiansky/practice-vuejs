@@ -6,12 +6,18 @@ var app = new Vue({
       message: "Hello from JavaScript!",
       numbers: "1, 2, 3, 4, 5",
       misc: "blah blah blah",
-      showInfo: false
+      showInfo: false,
+      fruits: ["apple", "peach", "pear"],
+      newFruit: ""
     };
   },
   methods: {
     changeMessage: function() {
       this.message = "Whoa...";
+    },
+    addNewFruit: function() {
+      this.fruits.push(this.newFruit);
+      this.newFruit = "";
     }
   }
 });
