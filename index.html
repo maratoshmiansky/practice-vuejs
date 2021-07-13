@@ -6,6 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js" defer></script>
   </head>
+  <style>
+    .disabled {
+      color: lavender;
+      transition: color 1s ease;
+    }
+  </style>
   <body>
     <h1>Hello from HTML!</h1>
     <div id="app">
@@ -14,7 +20,7 @@
       {{ misc }}<br><br>
       <button v-on:click="changeMessage()">Click it!</button><br><br>
       <div><button v-on:click="showInfo = !showInfo">Toggle!</button>
-      <p v-if="showInfo">Extra information!</p>
+      <p v-bind:class="{disabled: showInfo}">Extra information!</p>
       </div>
     </div>
     <div id="app-2">
