@@ -5,7 +5,8 @@ var app = new Vue({
     return {
       message: "Hello from JavaScript!",
       numbers: "1, 2, 3, 4, 5",
-      misc: "blah blah blah"
+      misc: "blah blah blah",
+      showInfo: false
     };
   },
   methods: {

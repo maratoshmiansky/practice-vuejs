@@ -13,6 +13,9 @@
       {{ numbers }}<br><br>
       {{ misc }}<br><br>
       <button v-on:click="changeMessage()">Click it!</button><br><br>
+      <div><button v-on:click="showInfo = !showInfo">Toggle!</button>
+      <p v-if="showInfo">Extra information!</p>
+      </div>
     </div>
     <div id="app-2">
       <span v-bind:title="message">
