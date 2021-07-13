@@ -8,7 +8,8 @@ var app = new Vue({
       number2: 0,
       number3: 0,
       sum: 0,
-      product: 0
+      product: 0,
+      sumproduct: 0
     };
   },
   methods: {
@@ -17,6 +18,9 @@ var app = new Vue({
     },
     computeProduct: function() {
       this.product = parseInt(this.number1) * parseInt(this.number2) * parseInt(this.number3);
+    },
+    computeSumProduct: function() {
+      this.sumproduct = parseInt(this.number1) + parseInt(this.number2) * parseInt(this.number3);
     }
   }
 });
