@@ -20,7 +20,8 @@
       <br />
       <br />
       <div v-for="todo in todos">
-        <p>{{ todo }}</p>
+        <h4>Title: {{todo.title}}</h4>
+        <p>Completed? {{todo.completed }}</p>
       </div>
       {{ message }}
       <br />
