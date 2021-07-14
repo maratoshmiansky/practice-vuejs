@@ -5,6 +5,7 @@
     <title>Practice Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <style>
     .disabled {
@@ -15,24 +16,38 @@
   <body>
     <h1>Hello from HTML!</h1>
     <div id="app">
-      {{ message }}<br><br>
-      {{ numbers }}<br><br>
-      {{ misc }}<br><br>
-      <button v-on:click="changeMessage()">Click it!</button><br><br>
-      <div><button v-on:click="showInfo = !showInfo">Toggle!</button>
-      <p v-bind:class="{disabled: showInfo}">Extra information!</p>
+      <button v-on:click="loadTodos()">Load Todos</button>
+      <br />
+      <br />
+      <div v-for="todo in todos">
+        <p>{{ todo }}</p>
+      </div>
+      {{ message }}
+      <br />
+      <br />
+      {{ numbers }}
+      <br />
+      <br />
+      {{ misc }}
+      <br />
+      <br />
+      <button v-on:click="changeMessage()">Click it!</button>
+      <br />
+      <br />
+      <div>
+        <button v-on:click="showInfo = !showInfo">Toggle!</button>
+        <p v-bind:class="{disabled: showInfo}">Extra information!</p>
       </div>
       <div v-for="fruit in fruits">
         <p>{{fruit}}</p>
       </div>
-      <input type="text" v-model="newFruit"/>
+      <input type="text" v-model="newFruit" />
       <button v-on:click="addNewFruit()">Add that fruit!</button>
     </div>
     <div id="app-2">
-      <span v-bind:title="message">
-        Hover your mouse over me for a few seconds
-        to see my dynamically bound title!
-      </span><br><br>
+      <span v-bind:title="message">Hover your mouse over me for a few seconds to see my dynamically bound title!</span>
+      <br />
+      <br />
     </div>
     <div id="app-3">
       <span v-if="seen">Now you see me</span>
